@@ -1,4 +1,4 @@
 1) TURN OFF YOUR ANTIVIRUS!!! Antiviruses, including Windows Defender, will most likely falsely flag and remove critical files which are REQUIRED for FarewellDPI to operate.
 2) Extract the FarewellDPI.zip into disk C:\
-3) Open the extracted folder and run service_install_reinstall.cmd as Admin
+3) Open the extracted folder and run !SERVICE_INSTALL.cmd as Admin
 Done! You may now enjoy the free Internet!

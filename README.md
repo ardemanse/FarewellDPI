@@ -4,13 +4,13 @@ FarewellDPI is designed for fooling Deep Packet Inspection (DPI) systems which a
 # Installation
 1) TURN OFF YOUR ANTIVIRUS!!! Antiviruses, including Windows Defender, will most likely remove critical files which are REQUIRED for FarewellDPI to operate.
 2) Extract the FarewellDPI.zip into disk C:\
-3) Open the extracted folder and run service_install_reinstall.cmd as Admin
+3) Open the extracted folder and run !SERVICE_INSTALL.cmd as Admin
 Done! You may now enjoy the free Internet!
 
 # Configuration
 While it's very likely that FarewellDPI will unblock access to YouTube, Discord, Twitter (X) and other websites, it's still possible for it to fail.
 Different ISPs use different "breeds" of DPI. Some fooling strategies may work for one, but not for the others.
-You can manually edit the fooling strategies in service_install_reinstall.cmd:
+You can manually edit the fooling strategies in !SERVICE_INSTALL.cmd:
 
 ***
 - set DISQ50000=[Arguments for Discord voice]
