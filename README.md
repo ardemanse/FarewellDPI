@@ -6,7 +6,7 @@ FarewellDPI is designed for fooling Deep Packet Inspection (DPI) systems which a
 2) Extract the FarewellDPI.zip into disk C:\
 3) Open the extracted folder and run !SERVICE_INSTALL.cmd as Admin
 4) Make sure you aren't using your ISP's DNS servers. Instead, set your DNS to 1.1.1.1 and 8.8.8.8 (CloudFlare and Google)
-Done! You may now enjoy the free Internet!
+- Done! You may now enjoy the free Internet!
 
 # Configuration
 While it's very likely that FarewellDPI will unblock access to YouTube, Discord, Twitter (X) and other websites, it's still possible for it to fail.
