@@ -11,7 +11,7 @@ FarewellDPI is designed for fooling Deep Packet Inspection (DPI) systems which a
 # Configuration
 While it's very likely that FarewellDPI will unblock access to YouTube, Discord, Twitter (X) and other websites, it's still possible for it to fail.
 Different ISPs use different "breeds" of DPI. Some fooling strategies may work for one, but not for the others.
-You can manually edit the fooling strategies in !SERVICE_INSTALL.cmd:
+You can manually edit the fooling strategies in SERVICE_INSTALL.cmd:
 
 ***
 - set DISQ50000=[Arguments for Discord voice]
