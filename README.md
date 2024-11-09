@@ -5,6 +5,7 @@ FarewellDPI is designed for fooling Deep Packet Inspection (DPI) systems which a
 1) TURN OFF YOUR ANTIVIRUS!!! Antiviruses, including Windows Defender, will most likely remove critical files which are REQUIRED for FarewellDPI to operate.
 2) Extract the FarewellDPI.zip into disk C:\
 3) Open the extracted folder and run !SERVICE_INSTALL.cmd as Admin
+4) Make sure you aren't using your ISP's DNS servers. Instead, set your DNS to 1.1.1.1 and 8.8.8.8 (CloudFlare and Google)
 Done! You may now enjoy the free Internet!
 
 # Configuration
