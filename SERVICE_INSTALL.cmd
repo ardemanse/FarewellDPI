@@ -4,11 +4,11 @@ del /F /Q logfile.log
 
 :: Edit strategies here ::
 set DISQ50000=--dpi-desync=fake --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-cutoff=d2 --dpi-desync-any-protocol --dpi-desync-repeats=3
-set AUTO443=--dpi-desync=fake,split --dpi-desync-split-seqovl=49 --dpi-desync-split-pos=50 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_dzen_ru.bin" --dpi-desync-fooling=md5sig,datanoack --dpi-desync-autottl=1 --dpi-desync-repeats=2
-set YT443=--dpi-desync=fake,split --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com.bin" --dpi-desync-split-seqovl=1 --dpi-desync-ttl=3
-set YTDISQ443=--dpi-desync=fake,udplen --dpi-desync-udplen-increment=10 --dpi-desync-udplen-pattern=0xDEADBEEF --dpi-desync-fake-quic="%~dp0fake\quic_initial_www_google_com.bin" --dpi-desync-cutoff=n2 --dpi-desync-repeats=3
-set GV443=--dpi-desync=split --dpi-desync-split-pos=2 --dpi-desync-split-tls=sniext --dpi-desync-fooling=md5sig,badseq --dpi-desync-repeats=8 --dpi-desync-ttl=4
-set BLACKLIST443=--dpi-desync=fake,split --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-seqovl=224 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-repeats=2
+set AUTO443=--dpi-desync=fake,split --dpi-desync-split-seqovl=3 --dpi-desync-split-tls=sniext --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_dzen_ru.bin" --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1
+set YT443=--dpi-desync=fake,split2 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com.bin" --dpi-desync-split-seqovl=1 --dpi-desync-ttl=3
+set YTDISQ443=--dpi-desync=fake,udplen --dpi-desync-udplen-increment=10 --dpi-desync-udplen-pattern=0xDEADBEEF --dpi-desync-fake-quic="%~dp0fake\quic_initial_www_google_com.bin" --dpi-desync-cutoff=n2 --dpi-desync-repeats=5
+set GV443=--dpi-desync=disorder --dpi-desync-split-pos=2 --dpi-desync-split-tls=sniext --dpi-desync-fooling=datanoack --dpi-desync-repeats=8 --dpi-desync-ttl=3
+set BLACKLIST443=--dpi-desync=fake,disorder --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-seqovl=224 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-fooling=md5sig,badseq
 set BLACKLIST80=--dpi-desync=fake,split --dpi-desync-fooling=md5sig
 :: Edit strategies end ::
 
