@@ -1,8 +1,3 @@
-www.instagram.com
 cdninstagram.com
-scontent.cdninstagram.com
-scontent-fra5-1.cdninstagram.com
-gateway.instagram.com
-scontent-fra3-2.cdninstagram.com
-scontent-fra3-1.cdninstagram.com
-scontent-fra5-2.cdninstagram.com
+instagram.com
+cloudflare-ech.com

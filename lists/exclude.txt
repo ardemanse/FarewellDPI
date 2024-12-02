@@ -1,3 +1,2 @@
-googleads.g.doubleclick.net
-stats.g.doubleclick.net
-td.doubleclick.net
+doubleclick.net
+microsoft.com

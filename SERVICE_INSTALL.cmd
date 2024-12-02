@@ -24,5 +24,3 @@ sc delete %1 >>logfile.log
 sc create %1 binPath= "\"%~dp0\bin\winws.exe\" %ARGS%" DisplayName= "FarewellDPI : %1" start= auto >>logfile.log
 sc description %1 "FarewellDPI. Have fun in The Internet!" >>logfile.log
 sc start %1 >>logfile.log
-
-pause
