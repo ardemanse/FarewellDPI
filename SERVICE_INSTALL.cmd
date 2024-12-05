@@ -7,7 +7,7 @@ set DISQ50000=--dpi-desync=fake --dpi-desync-fake-quic="%~dp0fake\quic_initial_v
 set AUTO443=--dpi-desync=fake,fakeddisorder --dpi-desync-fakedsplit-pattern="%~dp0fake\tls_clienthello_dzen_ru.bin" --dpi-desync-split-seqovl=2 --dpi-desync-split-pos=midsld+3 --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-repeats=3
 set YT443=--dpi-desync=fake,fakedsplit --dpi-desync-fakedsplit-pattern="%~dp0fake\tls_clienthello_www_google_com.bin" --dpi-desync-split-seqovl=2 --dpi-desync-split-pos=midsld+2 --dpi-desync-autottl=1 --dpi-desync-repeats=5
 set YTDISQ443=--dpi-desync=fake,udplen --dpi-desync-fake-quic="%~dp0fake\quic_initial_www_google_com.bin" --dpi-desync-udplen-increment=10 --dpi-desync-udplen-pattern=0xDEADBEEF --dpi-desync-cutoff=n2 --dpi-desync-repeats=5
-set BLACKLIST443=--dpi-desync=fake,fakedsplit --dpi-desync-fakedsplit-pattern="%~dp0fake\tls_clienthello_dzen_ru.bin" --dpi-desync-split-pos=host+1 --dpi-desync-fooling=md5sig,badseq --dpi-desync-repeats=3
+set BLACKLIST443=--dpi-desync=fake,fakedsplit --dpi-desync-fakedsplit-pattern="%~dp0fake\tls_clienthello_dzen_ru.bin" --dpi-desync-split-seqovl=2 --dpi-desync-split-pos=sld+2 --dpi-desync-fooling=md5sig,datanoack --dpi-desync-autottl=1 --dpi-desync-repeats=3
 set BLACKLIST80=--dpi-desync=fake,fakedsplit --dpi-desync-split-pos=method+4 --dpi-desync-fooling=md5sig,datanoack
 :: Edit strategies end ::
 
