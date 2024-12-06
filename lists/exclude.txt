@@ -1,13 +1,7 @@
-mail.ru
-yandex.ru
-dzen.ru
-mts.ru
-vk.com
-vkontakte.ru
 doubleclick.net
+gstatic.com
 microsoft.com
 wildberries.ru
-ads-twitter.com
-gstatic.com
-googlesyndication.com
-browser-intake-datadoghq.com
+ya.ru
+dzen.ru
+mail.ru
