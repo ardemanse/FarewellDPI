@@ -1,5 +1,5 @@
 # Make your Internet free again!
-FarewellDPI is designed for fooling Deep Packet Inspection (DPI) systems which are used for restricting access to Internet websites
+FarewellDPI is designed to spoof Deep Packet Inspection (DPI) systems which are used for restricting access to Internet websites
 
 # Installation
 1) TURN OFF YOUR ANTIVIRUS!!! Antiviruses, including Windows Defender, will most likely remove critical files which are REQUIRED for FarewellDPI to operate.
@@ -8,7 +8,7 @@ FarewellDPI is designed for fooling Deep Packet Inspection (DPI) systems which a
 4) Make sure you aren't using your ISP's DNS servers. Instead, set your DNS to 1.1.1.1 and 8.8.8.8 (CloudFlare and Google)
 5) Done! You may now enjoy the free Internet!
 
-# Configuration
+# Modifying DPI fooling strategies
 While it's very likely that FarewellDPI will unblock access to YouTube, Discord, Twitter (X) and other websites, it's still possible for it to fail.
 Different ISPs use different "breeds" of DPI. Some fooling strategies may work for one, but not for the others.
 You can manually edit the fooling strategies in SERVICE_INSTALL.cmd:
@@ -24,3 +24,17 @@ You can manually edit the fooling strategies in SERVICE_INSTALL.cmd:
 ***
 
 [List of all available arguments](https://github.com/ardemanse/zapret/blob/master/docs/readme.en.md#nfqws)
+
+# Manipulating host lists
+Host lists can be found in /FarewellDPI/lists/. While adding a new domain to any list, make sure to follow these rules:
+1) Always enter one domain per line
+2) Don't put any spaces
+
+***
+- blacklist.txt - Primary list of blocked domains. Strategy code: BLACKLIST443 for HTTPS, BLACKLIST80 for HTTP
+- customhostlist.txt - Secondary list of blocked domains. Strategy code: BLACKLIST443 for HTTPS, BLACKLIST80 for HTTP
+- autohostlist.txt - Automatic list of blocked domains, detects and adds banned websites on its own. Strategy code: AUTO443 for HTTPS
+- youtube.txt and youtubeQ.txt - YouTube domains. Strategy code: YT443 for HTTPS, YTDISQ443 for QUIC
+- discord.txt - Discord domains. Strategy code: BLACKLIST443 for HTTPS, YTDISQ443 for QUIC
+- exclude.txt - A list of excluded domains. Use this file if there are domains which are constantly being falsely added to autohostlist.txt
+***
