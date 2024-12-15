@@ -18,4 +18,4 @@ googleapis.com
 google.com
 app-measurement.com
 www.cust-service.com
-cm.mgid.com
+mgid.com
