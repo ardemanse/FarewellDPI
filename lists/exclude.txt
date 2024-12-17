@@ -17,5 +17,5 @@ browser-intake-datadoghq.com
 googleapis.com
 google.com
 app-measurement.com
-www.cust-service.com
+cust-service.com
 mgid.com
