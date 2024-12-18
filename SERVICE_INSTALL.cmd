@@ -11,12 +11,14 @@ set YT443=--dpi-desync=fake,fakedsplit --dpi-desync-fake-tls="%~dp0fake\tls_clie
 
 set YTDISQ443=--dpi-desync=fake,udplen --dpi-desync-fake-quic="%~dp0fake\quic_initial_www_google_com.bin" --dpi-desync-udplen-increment=10 --dpi-desync-udplen-pattern=0xDEADBEEF --dpi-desync-cutoff=n2 --dpi-desync-repeats=6
 
+set TW443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_rutube_ru.bin" --dpi-desync-split-seqovl=1 --dpi-desync-split-pos=1,midsld+1,sniext+3,host+2 --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-repeats=4
+
 set BLACKLIST443=--dpi-desync=fake,multidisorder --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_yandex_net.bin" --dpi-desync-split-seqovl=1 --dpi-desync-split-pos=3,midsld+2,sniext,endhost-5 --dpi-desync-fooling=md5sig --dpi-desync-autottl=1 --dpi-desync-repeats=3
 
 set BLACKLIST80=--dpi-desync=fake,multisplit --dpi-desync-split-pos=1,method+2 --dpi-desync-fooling=md5sig
 :: -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ::
 
-set ARGS=--wf-tcp=80,443 --wf-udp=443,50000-50099 --filter-udp=443 --hostlist="%~dp0lists\youtubeQ.txt" --hostlist="%~dp0lists\discord.txt" %YTDISQ443% --new --filter-tcp=443 --hostlist="%~dp0lists\youtube.txt" %YT443% --new --filter-tcp=80 --hostlist="%~dp0lists\blacklist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" --hostlist="%~dp0lists\customhostlist.txt" %BLACKLIST80% --new --filter-tcp=443 --hostlist="%~dp0lists\blacklist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist="%~dp0lists\discord.txt" %BLACKLIST443% --new --filter-udp=50000-50099 %DISQ50000% --new --filter-tcp=443 --hostlist-auto="%~dp0lists\autohostlist.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-fail-threshold=3 --hostlist-auto-fail-time=30 --hostlist-exclude="%~dp0lists\exclude.txt" %AUTO443%
+set ARGS=--wf-tcp=80,443 --wf-udp=443,50000-50099 --filter-udp=443 --hostlist="%~dp0lists\youtubeQ.txt" --hostlist="%~dp0lists\discord.txt" %YTDISQ443% --new --filter-tcp=443 --hostlist="%~dp0lists\youtube.txt" %YT443% --new --filter-tcp=443 --hostlist="%~dp0lists\twitch.txt" %TW443% --new --filter-tcp=80 --hostlist="%~dp0lists\blacklist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" --hostlist="%~dp0lists\customhostlist.txt" %BLACKLIST80% --new --filter-tcp=443 --hostlist="%~dp0lists\blacklist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist="%~dp0lists\discord.txt" %BLACKLIST443% --new --filter-udp=50000-50099 %DISQ50000% --new --filter-tcp=443 --hostlist-auto="%~dp0lists\autohostlist.txt" --hostlist-auto-retrans-threshold=2 --hostlist-auto-fail-threshold=3 --hostlist-auto-fail-time=30 --hostlist-exclude="%~dp0lists\exclude.txt" %AUTO443%
 set ARGS=%ARGS:"=\"%
 
 call :srvinst zapret

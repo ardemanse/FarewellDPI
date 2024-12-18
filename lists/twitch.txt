@@ -1,0 +1,15 @@
+twitch.tv
+ttvnw.net
+twitchcdn.net
+jtvnw.net
+live-video.net
+ext-twitch.tv
+twitch.a2z.com
+twitchcdn-shadow.net
+twitch-shadow.net
+twitchsvc.net
+twitchsvc-staging.tech
+amazonaws.com
+akamaiedge.net
+fastly.net
+okta.com
