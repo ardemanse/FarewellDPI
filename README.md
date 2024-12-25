@@ -17,9 +17,9 @@ You can manually edit the fooling strategies in SERVICE_INSTALL.cmd.
 ```
 set DISQ50000=[Arguments for Discord voice]
 set AUTO443=[Arguments for domains which were automatically flagged as blocked]
-set YT443=[Arguments for YouTube]
+set YT443=[Arguments for YouTube on TCP 443]
 set YTDISQ443=[Arguments for YouTube and Discord on UDP 443]
-set GV443=[Arguments for YouTube's googlevideo.com domain]
+set TW443=[Arguments for Twitch on TCP 443]
 set BLACKLIST443=[Arguments for blocked domains from blacklist.txt and Discord on TCP 443]
 set BLACKLIST80=[Arguments for blocked domains from blacklist.txt and Discord on TCP 80]
 ```
@@ -34,6 +34,7 @@ blacklist.txt — Primary list of blocked domains. Strategy code: BLACKLIST443 f
 customhostlist.txt — Secondary list of blocked domains. Strategy code: BLACKLIST443 for HTTPS, BLACKLIST80 for HTTP.
 autohostlist.txt — Automatic list of blocked domains, detects and adds banned websites on its own. Strategy code: AUTO443 for HTTPS.
 youtube.txt, youtubeQ.txt — YouTube domains. Strategy code: YT443 for HTTPS, YTDISQ443 for QUIC.
+twitch.txt — Twitch domains. Strategy code: TW443
 discord.txt — Discord domains. Strategy code: BLACKLIST443 for HTTPS, YTDISQ443 for QUIC.
 exclude.txt — A list of excluded domains. Use this file if there are domains which are constantly being falsely added to autohostlist.txt.
 ```
