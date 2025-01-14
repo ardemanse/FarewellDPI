@@ -2,6 +2,7 @@ mail.ru
 ya.ru
 yandex.ru
 yandex.net
+yandex.com
 dzen.ru
 mts.ru
 vk.com
@@ -9,13 +10,12 @@ vkontakte.ru
 doubleclick.net
 microsoft.com
 wildberries.ru
+gosuslugi.ru
 ads-twitter.com
-gstatic.com
 googlesyndication.com
+googleadservices.com
 google-analytics.com
 browser-intake-datadoghq.com
-googleapis.com
-google.com
 app-measurement.com
 cust-service.com
 mgid.com

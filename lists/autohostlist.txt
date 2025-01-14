@@ -1,2 +1,3 @@
 ntc.party
 cloudflare-ech.com
+cloudflare-dns.com
