@@ -5,7 +5,7 @@ del /F /Q logfile.log
 :: -=-=-=-=-=-=-=-=-=-=-= Edit strategies here -=-=-=-=-=-=-=-=-=-=-= ::
 set DISQ50000=--dpi-desync=fake --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-cutoff=d2 --dpi-desync-any-protocol --dpi-desync-repeats=3
 
-set AUTO443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_stepik_org.bin" --dpi-desync-split-seqovl=15 --dpi-desync-split-pos=sld-2,midsld,endsld+1,sniext+7,host+1,endhost --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-repeats=3
+set AUTO443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-seqovl=15 --dpi-desync-split-pos=sld-2,midsld,endsld+1,sniext+7,host+1,endhost --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-repeats=3
 
 set YT443=--dpi-desync=fake,fakedsplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_google_com.bin" --dpi-desync-split-seqovl=1 --dpi-desync-split-pos=midsld-1 --dpi-desync-fooling=md5sig --dpi-desync-autottl=1 --dpi-desync-repeats=6
 
@@ -13,7 +13,7 @@ set YTDISQ443=--dpi-desync=fake,udplen --dpi-desync-fake-quic="%~dp0fake\quic_in
 
 set TW443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_rutube_ru.bin" --dpi-desync-split-seqovl=9 --dpi-desync-split-pos=sld-3,midsld,sniext+5,host+2 --dpi-desync-fooling=md5sig --dpi-desync-autottl=1 --dpi-desync-repeats=4
 
-set BLACKLIST443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_dzen_ru.bin" --dpi-desync-split-seqovl=527 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-pos=sld-5,sld,midsld,endsld-1,sniext-4,sniext+16,host+2,host+11 --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-repeats=6
+set BLACKLIST443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_vk_com.bin" --dpi-desync-split-seqovl=527 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-pos=sld-5,sld,midsld,endsld-1,sniext-4,sniext+16,host+2,host+11 --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-repeats=6
 
 set BLACKLIST80=--dpi-desync=fake,multidisorder --dpi-desync-split-seqovl=5 --dpi-desync-split-pos=7,method+2,host+4,-32 --dpi-desync-fooling=md5sig,badseq
 :: -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ::
