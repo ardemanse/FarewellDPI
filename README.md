@@ -12,14 +12,13 @@ FarewellDPI is designed to spoof Deep Packet Inspection (DPI) systems which are 
 While it's very likely that FarewellDPI will unblock access to YouTube, Discord, Twitter (X) and other websites, it's still possible for it to fail.
 Different ISPs use different "breeds" of DPI. Some fooling strategies may work for one, but not for the others.
 You can manually edit the fooling strategies in SERVICE_INSTALL.cmd.
-[List of all available arguments](https://github.com/ardemanse/zapret/blob/master/docs/readme.en.md#nfqws)
+[List of all available arguments](https://github.com/bol-van/zapret/blob/master/docs/readme.en.md#nfqws)
 
 ```
 set BLACKLIST80=[Arguments for blocked domains from blacklist.txt and Discord on TCP 80]
 set BLACKLIST443=[Arguments for blocked domains from blacklist.txt and Discord on TCP 443]
 set AUTO443=[Arguments for domains which were automatically flagged as blocked]
 set YT443=[Arguments for YouTube on TCP 443]
-set TW443=[Arguments for Twitch on TCP 443]
 set QUIC443=[Arguments for QUIC protocol on UDP 443]
 set DISQ50000=[Arguments for Discord voice]
 ```
@@ -34,7 +33,6 @@ blacklist.txt — Primary list of blocked domains. Strategy code: BLACKLIST443 f
 customhostlist.txt — Secondary list of blocked domains. Strategy code: BLACKLIST443 for HTTPS, BLACKLIST80 for HTTP.
 autohostlist.txt — Automatic list of blocked domains, detects and adds banned websites on its own. Strategy code: AUTO443 for HTTPS.
 youtube.txt — YouTube domains. Strategy code: YT443 for HTTPS.
-twitch.txt — Twitch domains. Strategy code: TW443
 discord.txt — Discord domains. Strategy code: BLACKLIST443 for HTTPS.
 exclude.txt — A list of excluded domains. Use this file if there are domains which are constantly being falsely added to autohostlist.txt.
 ```
