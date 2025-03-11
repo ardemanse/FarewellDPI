@@ -19,7 +19,6 @@ googlesyndication.com
 google-analytics.com
 googleadservices.com
 gstatic.com
-google.com
 doubleclick.net
 browser-intake-datadoghq.com
 app-analytics-services.com
