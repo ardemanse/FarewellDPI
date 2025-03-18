@@ -24,6 +24,6 @@ goto :eof
 :srvinst
 net stop %1
 sc delete %1
-sc create %1 binPath= "\"%~dp0\bin\winws.exe\" %ARGS%" DisplayName= "FarewellDPI : %1" start= auto
+sc create %1 binPath="\"%~dp0\bin\winws.exe\" %ARGS%" DisplayName="FarewellDPI : %1" start=auto
 sc description %1 "FarewellDPI. Have fun in The Internet!"
 sc start %1
