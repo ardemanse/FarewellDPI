@@ -1,6 +1,5 @@
 chcp 65001
 pushd "%~dp0"
-del /F /Q logfile.log
 
 :: -=-=-=-=-=-=-=-=-=-=-= Edit strategies here -=-=-=-=-=-=-=-=-=-=-= ::
 set BLACKLIST80=--dpi-desync=fake,multidisorder --dpi-desync-split-seqovl=5 --dpi-desync-split-pos=7,method+2,host+4,-32 --dpi-desync-fooling=md5sig,badseq --dpi-desync-repeats=3
@@ -23,8 +22,8 @@ call :srvinst zapret
 goto :eof
 
 :srvinst
-net stop %1 >>logfile.log
-sc delete %1 >>logfile.log
-sc create %1 binPath= "\"%~dp0\bin\winws.exe\" %ARGS%" DisplayName= "FarewellDPI : %1" start= auto >>logfile.log
-sc description %1 "FarewellDPI. Have fun in The Internet!" >>logfile.log
-sc start %1 >>logfile.log
+net stop %1
+sc delete %1
+sc create %1 binPath= "\"%~dp0\bin\winws.exe\" %ARGS%" DisplayName= "FarewellDPI : %1" start= auto
+sc description %1 "FarewellDPI. Have fun in The Internet!"
+sc start %1

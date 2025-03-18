@@ -1,5 +1,4 @@
 pushd "%~dp0"
-del /F /Q logfile.log
 
 call :srvdel zapret
 rem call :srvdel zapret2
