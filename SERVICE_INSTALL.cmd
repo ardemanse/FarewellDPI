@@ -11,7 +11,7 @@ set AUTO443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_cl
 
 set YT443=--dpi-desync=fake,fakedsplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_google_com.bin" --dpi-desync-split-seqovl=456 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_www_google_com.bin" --dpi-desync-split-pos=midsld-1 --dpi-desync-fooling=md5sig,datanoack --dpi-desync-repeats=8
 
-set QUIC443=--dpi-desync=fake --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-autottl=1 --dpi-desync-autottl6=1 --dpi-desync-repeats=16
+set QUIC443=--dpi-desync=fake,ipfrag2 --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-ipfrag-pos-udp=32 --dpi-desync-autottl=1 --dpi-desync-autottl6=1 --dpi-desync-repeats=16
 
 set DISQ50000=--dpi-desync=fake,udplen --dpi-desync-fake-unknown-udp="%~dp0fake\quic_short_header.bin" --dpi-desync-udplen-increment=8 --dpi-desync-udplen-pattern=0xDEADBEEF --dpi-desync-cutoff=d2 --dpi-desync-any-protocol --dpi-desync-repeats=4
 :: -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ::
