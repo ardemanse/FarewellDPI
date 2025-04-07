@@ -7,7 +7,7 @@ set BLACKLIST80=--dpi-desync=fake,multisplit --dpi-desync-fake-http="%~dp0fake\h
 
 set BLACKLIST443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_vk_com.bin" --dpi-desync-split-seqovl=458 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-pos=sld-5,sld,midsld-1,midsld+1,endsld,sniext,sniext+16,host+2,host+7,-52,-42 --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-autottl6=1 --dpi-desync-repeats=6
 
-set AUTO443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-seqovl=398 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_vk_com.bin" --dpi-desync-split-pos=sld-2,midsld,endsld+1,sniext+7,host+1,endhost --dpi-desync-fooling=md5sig,badseq --dpi-desync-autottl=1 --dpi-desync-autottl6=1 --dpi-desync-repeats=3
+set AUTO443=--dpi-desync=fake,multisplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_ru.bin" --dpi-desync-split-seqovl=398 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_vk_com.bin" --dpi-desync-split-pos=sld-2,midsld,endsld+1,sniext+7,host+1,endhost --dpi-desync-fooling=md5sig,datanoack --dpi-desync-autottl=1 --dpi-desync-autottl6=1 --dpi-desync-repeats=3
 
 set YT443=--dpi-desync=fake,fakedsplit --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_mail_google_com.bin" --dpi-desync-split-seqovl=456 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_www_google_com.bin" --dpi-desync-split-pos=midsld-1 --dpi-desync-fooling=md5sig,datanoack --dpi-desync-repeats=8
 
