@@ -1,2 +1,2 @@
-ntc.party
 cloudflare-ech.com
+ntc.party
