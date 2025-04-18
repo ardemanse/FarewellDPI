@@ -5,14 +5,14 @@ del /F /Q logfile.log
 :: -=-=-=-=-=-=-=-=-=-=-= Edit strategies here -=-=-=-=-=-=-=-=-=-=-= ::
 set BLACKLIST80=--dpi-desync=fake,multisplit --dpi-desync-repeats=3 --dpi-desync-fake-http="%~dp0fake\http_iana_org.bin" --dpi-desync-split-pos=7,method+2,host+4,-32 --dpi-desync-fooling=md5sig,badseq
 
-set BLACKLIST443=--dpi-desync=fake,multisplit --dpi-desync-repeats=6 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com_tls13.bin" --dpi-desync-fake-tls-mod=none --dpi-desync-split-seqovl=496 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_vk_com_tls13.bin" --dpi-desync-split-pos=sld-42,sld-36,sld-24,sld-18,sld-5,sld-2,sld,midsld-2,midsld,midsld+2,endsld+1,endsld+2,endsld+7,endsld+14,endsld+21,endsld+33,endsld+42,endsld+52,endsld+69,endsld+127 --dpi-desync-fooling=md5sig,datanoack
+set BLACKLIST443=--dpi-desync=fake,multisplit --dpi-desync-repeats=6 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com_tls13.bin" --dpi-desync-fake-tls-mod=dupsid --dpi-desync-split-seqovl=496 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_vk_com_tls13.bin" --dpi-desync-split-pos=sld-42,sld-36,sld-24,sld-18,sld-5,sld-2,sld,midsld-2,midsld,midsld+2,endsld+1,endsld+2,endsld+7,endsld+14,endsld+21,endsld+33,endsld+42,endsld+52,endsld+69,endsld+127 --dpi-desync-fooling=md5sig,datanoack
 
 set QUIC443=--dpi-desync=fake,ipfrag2 --dpi-desync-repeats=12 --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-fake-tls-mod=none --dpi-desync-ipfrag-pos-udp=32
 
 set DISQ50000=--dpi-desync=fake,udplen --dpi-desync-repeats=4 --dpi-desync-fake-unknown-udp="%~dp0fake\quic_short_header.bin" --dpi-desync-fake-tls-mod=none --dpi-desync-udplen-increment=8 --dpi-desync-udplen-pattern=0xDEADBEEF --dpi-desync-any-protocol --dpi-desync-cutoff=d2
 :: -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ::
 
-set ARGS=--wf-tcp=80,443 --wf-udp=443,50000-50099 --filter-tcp=80 --hostlist="%~dp0lists\blacklist.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" %BLACKLIST80% --new --filter-tcp=443 --hostlist="%~dp0lists\blacklist.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist="%~dp0lists\discord.txt" --hostlist="%~dp0lists\youtube.txt" %BLACKLIST443% --new --filter-tcp=443 --hostlist-auto="%~dp0lists\autohostlist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" %BLACKLIST443% --new --filter-udp=443 %QUIC443% --new --filter-udp=50000-50099 %DISQ50000%
+set ARGS=--wf-tcp=80,443 --wf-udp=443,50000-50099 --filter-tcp=80 --hostlist="%~dp0lists\blacklist.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" %BLACKLIST80% --new --filter-tcp=443 --hostlist="%~dp0lists\blacklist.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist="%~dp0lists\discord.txt" --hostlist="%~dp0lists\youtube.txt" %BLACKLIST443% --new --filter-tcp=443 --hostlist-auto="%~dp0lists\autohostlist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" %BLACKLIST443% --new --filter-udp=443 %QUIC443% --new --filter-udp=50000-50099 --filter-l7=discord,stun %DISQ50000%
 
 set ARGS=%ARGS:"=\"%
 
