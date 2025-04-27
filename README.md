@@ -15,10 +15,10 @@ You can manually edit the fooling strategies in SERVICE_INSTALL.cmd.
 [List of all available arguments](https://github.com/bol-van/zapret/blob/master/docs/readme.en.md#nfqws)
 
 ```
-set BLACKLIST80=[Arguments for blocked domains from host lists, plain HTTP]
-set BLACKLIST443=[Arguments for blocked domains from host lists, HTTPS]
+set HTTP80=[Arguments for blocked domains from host lists, plaintext HTTP]
+set TLS443=[Arguments for blocked domains from host lists, HTTPS/TLS]
 set QUIC443=[Arguments for all QUIC connections]
-set DISQ50000=[Arguments for Discord voice]
+set DISCORDSTUN50000=[Arguments for Discord voice]
 ```
 
 # Manipulating host lists
