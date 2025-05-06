@@ -9,7 +9,7 @@ set TLS443=--dpi-desync=fake,multisplit --dpi-desync-repeats=3 --dpi-desync-fake
 
 set QUIC443=--dpi-desync=fake,ipfrag2 --dpi-desync-repeats=6 --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-ipfrag-pos-udp=32
 
-set DISCORDSTUN50000=--dpi-desync=fake,udplen --dpi-desync-repeats=3 --dpi-desync-fake-discord="%~dp0fake\quic_short_header.bin" --dpi-desync-fake-stun="%~dp0fake\quic_short_header.bin" --dpi-desync-udplen-increment=0xDEADBEEF
+set DISCORDSTUN50000=--dpi-desync=fake,udplen --dpi-desync-repeats=3 --dpi-desync-fake-discord="%~dp0fake\quic_short_header.bin" --dpi-desync-fake-stun="%~dp0fake\quic_short_header.bin" --dpi-desync-udplen-increment=8 --dpi-desync-udplen-increment-pattern=0xDEADBEEF
 :: -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ::
 
 set ARGS=--wf-tcp=80,443 --wf-udp=443,50000-50099 --filter-tcp=80 --hostlist="%~dp0lists\blacklist.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist="%~dp0lists\discord.txt" --hostlist="%~dp0lists\youtube.txt" %HTTP80% --new --filter-tcp=443 --hostlist="%~dp0lists\blacklist.txt" --hostlist="%~dp0lists\customhostlist.txt" --hostlist="%~dp0lists\discord.txt" --hostlist="%~dp0lists\youtube.txt" %TLS443% --new --filter-tcp=443 --hostlist-auto="%~dp0lists\autohostlist.txt" --hostlist-exclude="%~dp0lists\exclude.txt" %TLS443% --new --filter-udp=443 %QUIC443% --new --filter-udp=50000-50099 --filter-l7=discord,stun %DISCORDSTUN50000%
