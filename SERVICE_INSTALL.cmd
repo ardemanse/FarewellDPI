@@ -5,7 +5,7 @@ del /F /Q logfile.log
 :: -=-=-=-=-=-=-=-=-=-=-= Edit strategies here -=-=-=-=-=-=-=-=-=-=-= ::
 set HTTP80=--dpi-desync=fake,multisplit --dpi-desync-repeats=12 --dpi-desync-fake-http="%~dp0fake\http_iana_org.bin" --dpi-desync-split-pos=9,method+1,host,host+2,host+5,host+9,-11 --dpi-desync-fooling=badseq
 
-set TLS443=--dpi-desync=fake,multisplit --dpi-desync-repeats=3 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com_tls12.bin" --dpi-desync-fake-tls-mod=rnd,dupsid --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_ads_vk_com_tls12.bin" --dpi-desync-fake-tls-mod=rnd,dupsid --dpi-desync-split-seqovl=488 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_ads_vk_com_tls12.bin" --dpi-desync-split-pos=sld-20,sld-14,sld-9,sld-5,sld-2,sld,midsld-1,midsld,midsld+2,endsld,endsld+2,endsld+4,endsld+8,endsld+16,endsld+32 --dpi-desync-fooling=datanoack
+set TLS443=--dpi-desync=fake,multisplit --dpi-desync-repeats=6 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com_tls12.bin" --dpi-desync-fake-tls-mod=rnd,dupsid --dpi-desync-split-seqovl=488 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_www_google_com_tls12.bin" --dpi-desync-split-pos=sld-24,sld-20,sld-18,sld-14,sld-12,sld-9,sld-7,sld-6,sld-3,sld-1,sld,midsld-1,midsld,midsld+2,endsld-1,endsld+2,endsld+4,endsld+8,endsld+16,endsld+32 --dpi-desync-fooling=datanoack
 
 set QUIC443=--dpi-desync=fake,ipfrag2 --dpi-desync-repeats=6 --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-ipfrag-pos-udp=32
 
