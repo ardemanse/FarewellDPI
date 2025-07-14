@@ -14,8 +14,7 @@ You can manually edit the fooling strategies in SERVICE_INSTALL.cmd.
 [List of all available arguments](https://github.com/bol-van/zapret/blob/master/docs/readme.en.md#nfqws)
 
 ```
-set TLS443_A=[Arguments for blocked domains from main host lists, HTTPS/TLS]
-set TLS443_B=[Arguments for YouTube domains, HTTPS/TLS]
+set TLS443=[Arguments for all blocked websites on HTTPS/TLS]
 set QUIC443=[Arguments for all QUIC connections]
 set DISCORDSTUN50000=[Arguments for Discord voice]
 ```
