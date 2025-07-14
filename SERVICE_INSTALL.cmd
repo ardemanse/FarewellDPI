@@ -3,7 +3,7 @@ pushd "%~dp0"
 del /F /Q logfile.log
 
 :: -=-=-=-=-=-=-=-=-=-=-= Edit strategies here -=-=-=-=-=-=-=-=-=-=-= ::
-set TLS443=--dpi-desync=fake,multisplit --dpi-desync-repeats=3 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com_tls13.bin" --dpi-desync-fake-tls-mod=rnd,dupsid --dpi-desync-split-seqovl=508 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_www_google_com_tls13.bin" --dpi-desync-split-pos=sniext,sld-9,sld-5,sld-1,sld+1,midsld-1,midsld,midsld+2,endsld-3,endsld+2 --dpi-desync-fooling=datanoack
+set TLS443=--dpi-desync=fake,multisplit --dpi-desync-repeats=3 --dpi-desync-fake-tls="%~dp0fake\tls_clienthello_www_google_com_tls13.bin" --dpi-desync-fake-tls-mod=rnd,dupsid,sni=drive.google.com --dpi-desync-split-seqovl=508 --dpi-desync-split-seqovl-pattern="%~dp0fake\tls_clienthello_www_google_com_tls13.bin" --dpi-desync-split-pos=sniext,sld-9,sld-5,sld-1,sld+1,midsld-1,midsld,midsld+2,endsld-3,endsld+2 --dpi-desync-fooling=datanoack,badseq
 
 set QUIC443=--dpi-desync=fake,ipfrag2 --dpi-desync-repeats=5 --dpi-desync-fake-quic="%~dp0fake\quic_initial_vk_com.bin" --dpi-desync-ipfrag-pos-udp=32
 
