@@ -2,8 +2,8 @@ ru
 vk.com
 yandex.com
 yandex.net
-google.com
 microsoft.com
+google.com
 gstatic.com
 doubleclick.net
 googleapis.com
